@@ -11,22 +11,22 @@
 		<%= f.number_field :current_weight, class: 'form-control' %>
 
 		<%= f.label :desired_pace %>
-		<%= f.radio_button :desired_pace, class: 'form-control' %>
+		<%= f.select :desired_pace, ["Lose 2 pounds a week", "Lose 1 pound a week", "Maintain weight", "Gain 1 pound a week", "Gain 2 pounds a week"], class: 'form-control' %>
 
 		<%= f.label :current_bodyfat %>
 		<%= f.number_field :current_bodyfat, class: 'form-control' %>
 
 		<%= f.label :activity_level %>
-		<%= f.select :activity_level, class: 'form-control' %>
+		<%= f.select :activity_level, ["Sedentary", "Lightly active", "Moderately active", "Very active"], class: 'form-control' %>
 
 		<%= f.label :carb_percent %>
-		<%= f.select :carb_percent, (0..100).to_a.map{|n| [n,n]}, class: 'form-control' %>
+		<%= f.select :carb_percent, (0..20).to_a.map{|n| [n * 5]}, class: 'form-control' %>
 
 		<%= f.label :protein_percent %>
-		<%= f.select :protein_percent, (0..100).to_a.map{|n| [n,n]}, class: 'form-control' %>		
+		<%= f.select :protein_percent, (0..20).to_a.map{|n| [n * 5]}, class: 'form-control' %>		
 
 		<%= f.label :fat_percent %>
-		<%= f.select :fat_percent, (0..100).to_a.map{|n| [n,n]}, class: 'form-control' %>		
+		<%= f.select :fat_percent, (0..20).to_a.map{|n| [n * 5]}, class: 'form-control' %>		
 
 		<%= f.submit "Let's get started", class: "btn btn-primary"  %>
 		<% end %>
