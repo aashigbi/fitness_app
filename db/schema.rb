@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820223020) do
+ActiveRecord::Schema.define(version: 20160821205338) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20160820223020) do
     t.decimal  "carb_percent"
     t.decimal  "protein_percent"
     t.decimal  "fat_percent"
+    t.string   "password_digest"
+    t.decimal  "daily_calories"
+    t.decimal  "calories_consumed"
+    t.decimal  "calories_remaining"
+    t.decimal  "daily_carbs"
+    t.decimal  "carbs_consumed"
+    t.decimal  "carbs_remaining"
+    t.decimal  "daily_protein"
+    t.decimal  "protein_consumed"
+    t.decimal  "protein_remaining"
+    t.decimal  "daily_fat"
+    t.decimal  "fat_consumed"
+    t.decimal  "fat_remaining"
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end

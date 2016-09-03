@@ -1,11 +1,14 @@
 <header class = "navbar navbar-fixed-top navbar-inverse">
 	<div class ="container">
-		<%= link_to "80-20 Dashboard", root_path, id: "logo" %>
+		<%= link_to "Build", root_path, id: "logo" %>
 		<nav>
 			<ul class = "nav navbar-nav navbar-right">
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "Food", food_path %></li>
-				<li><%= link_to "Goals", users_goals_path %></li>
+				<% if logged_in? %>
+					<li><%= link_to "Food", users_food_path %></li>
+					<li><%= link_to "Goals", users_goals_path(@current_user) %></li>
+					<li><%= link_to "Log Out", logout_path %></li>
+				<% else  %>
+				<% end %>		
 			</ul>
 		</nav>
 	</div>

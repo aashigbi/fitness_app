@@ -1,12 +1,12 @@
-<html>
-	<div id = "home_page_image">
+<div class = "home_page">
 
-	<h1>Build<h1>
+	<h1>Build</h1>
 
-		<h3>“You cannot dream yourself into a character: you must hammer and forge yourself into one.”</h3>
+	<h3>“You cannot dream yourself into a character: you must hammer and forge yourself into one.”</h3>
+	
+	<img src= 'http://798ba1b174f0e6a04a8efe01.thevladarcompany.netdna-cdn.com/wp-content/uploads/2014/06/Pumping-Iron-8-1560x690_c.jpg'>
 
-		<%= link_to "Sign Up", users_new_path, :class => "btn btn-default" %>
-		<%= link_to "Log In", '#', :class => "btn btn-default" %>
+	<%= link_to "Sign Up", signup_path, :class => "btn btn-default", id: "home_buttons" %>
+	<%= link_to "Log In", login_path, :class => "btn btn-default", id: "home_buttons" %>
 
-	</div>
-</html>
+</div>

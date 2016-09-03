@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
- # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'static_pages#home'
 
-  get 'users/new'
+  get '/users/goals/:id' => 'users#goals', as:'users_goals'
 
-  get 'users/goals'
+  get 'users/food' => 'users#food'
 
-  get 'food' => 'static_pages#food'
+  get 'nutrition/display'
+
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  get 'logout' => 'sessions#destroy'
+
+  get 'signup' => 'users#new'
+
+  get 'users/home'
 
   resources :users
 
