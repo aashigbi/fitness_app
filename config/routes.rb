@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/users/goals/:id' => 'users#goals', as:'users_goals'
 
-  get 'users/food' => 'users#food'
+  get 'users/food/:id' => 'users#food', as: 'users_food'
 
   get 'nutrition/display'
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new'
 
-  get 'users/home'
+  get 'users/home' => 'users#home'
 
   resources :users
 
