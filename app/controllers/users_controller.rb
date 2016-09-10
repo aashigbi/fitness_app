@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
  def food
   	@user = User.find(params[:id])
-  	@user_rmr = (500 + (@user.current_weight/2.2) * (1- (@user.current_bodyfat/100)) * 22) 
+  	# Determine user calorie target
+    @user_rmr = (500 + (@user.current_weight/2.2) * (1- (@user.current_bodyfat/100)) * 22) 
   	if @user.activity_level = "Sedentary"
   		@user_rmr_and_activity = @user_rmr * 1.25
   	elsif @user.activity_level = "Lightly active"
@@ -44,6 +45,63 @@ class UsersController < ApplicationController
 
 	@daily_calories = @user.daily_calories.round
 	@user.save
+
+  #Determine consumed calories
+
+  @consumed_calories = 0
+
+  #Determine burned calories
+
+  @burned_calories = 0
+
+  #Calculate remaining calories
+
+  @remaining_calories = @daily_calories - @consumed_calories + @burned_calories
+
+  @user.save
+
+  #Calculate protein target
+
+  @user.daily_protein = (@user.daily_calories * @user.protein_percent / 400).round
+  @daily_protein = @user.daily_protein
+  @user.save
+
+  #Calculate protein consumed
+  @consumed_protein = 0
+
+  #Calculate protein remaining
+  @remaining_protein = @daily_protein - @consumed_protein
+
+  @user.save
+
+  #Calculate carb target
+
+  @user.daily_carbs = (@user.daily_calories * @user.carb_percent / 400).round
+  @daily_carbs = @user.daily_carbs
+  @user.save
+
+  #Calculate carbs consumed
+  @consumed_carbs = 0
+
+  #Calculate carbs remaining
+  @remaining_carbs = @daily_carbs - @consumed_carbs
+
+  @user.save
+
+  #Calculate fat target
+
+  @user.daily_fat = (@user.daily_calories * @user.fat_percent / 900).round
+  @daily_fat = @user.daily_fat
+  @user.save
+
+  #Calculate fat consumed
+  @consumed_fat = 0
+
+  #Calculate fat remaining
+  @remaining_fat = @daily_fat - @consumed_fat
+
+  @user.save
+
   end
 
   def create
@@ -65,6 +123,8 @@ class UsersController < ApplicationController
   end
 
   def home
+    @user = User.find(params[:id])
+    @username = @user.name
   end
  
  end

@@ -1,17 +1,28 @@
 <h1>Calorie and Macro Dashboard</h1>
 
-<h3>Calories</h3>
-<p> Net Calorie target: <%= @daily_calories %></p>
-<p> Consumed:</p>
-<p> Burned: </p>
-<p> Remaining:</p>
-
-<h3>Protein</h3>
-<p> Target:</p>
-<p> Consumed:</p>
-<p> Remaining:</p>
-
-<h3>Carbs</h3>
-<p> Target:</p>
-<p> Consumed:</p>
-<p> Remaining:</p>
+<div class = "row">
+	<div class = "col-md-3">
+		<h3>Calories</h3>
+		<p> Net target: <%= @daily_calories %></p>
+		<p> Consumed: <%= @consumed_calories %></p>
+		<p> Burned: <%= @burned_calories %></p>
+		<p> Remaining: <%= @remaining_calories %> </p>
+	</div>
+	<div class = "col-md-3">
+		<h3>Protein (g)</h3>
+		<p> Target: <%= @daily_protein %> </p>
+		<p> Consumed: <%= @consumed_protein %></p>
+		<p> Remaining: <%= @remaining_protein %></p>
+	</div>
+	<div class = "col-md-3">
+		<h3>Carbs (g)</h3>
+		<p> Target: <%= @daily_carbs %></p>
+		<p> Consumed: <%= @consumed_carbs %></p>
+		<p> Remaining: <%= @remaining_carbs %></p>
+	</div>
+	<div class = "col-md-3">
+		<h3>Fat (g)</h3>
+		<p> Target: <%= @daily_fat %></p>
+		<p> Consumed: <%= @consumed_fat %></p>
+		<p> Remaining: <%= @remaining_fat %></p>
+	</div>

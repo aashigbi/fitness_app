@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new'
 
-  get 'users/home' => 'users#home'
+  get 'users/home/:id' => 'users#home', as: 'users_home'
 
   resources :users
 
