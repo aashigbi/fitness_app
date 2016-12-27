@@ -3,11 +3,15 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get '/users/goals/:id' => 'users#goals', as:'users_goals'
-
   get 'users/food/:id' => 'users#food', as: 'users_food'
 
-  get 'nutrition/display'
+  get 'users/home/:id' => 'users#home', as: 'users_home'
+
+  get 'foods/index' => 'foods#index', as:'food_lookup'
+
+  get 'foods/:id/edit' => 'foods#edit', as:'food'
+
+  get 'foods/:id/add' => 'foods#add', as:'add_food'
 
   get 'login' => 'sessions#new'
 
@@ -17,8 +21,7 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new'
 
-  get 'users/home/:id' => 'users#home', as: 'users_home'
-
   resources :users
+  resources :foods
 
 end

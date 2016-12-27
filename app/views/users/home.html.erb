@@ -1,6 +1,8 @@
 <h1>Welcome, <%= @username %>!<h1>
 
-<a href= '#' class ="btn btn-primary btn-lg" role = "button">Quick Add: Food </a>
-<a href= '#' class ="btn btn-primary btn-lg" role = "button">Quick Add: Water </a>
-<a href= '#' class ="btn btn-primary btn-lg" role = "button">Quick Add: Sleep </a>
-<a href= '#' class ="btn btn-primary btn-lg" role = "button">Quick Add: Workout </a>
+<div class ="btn-group">
+	<%= link_to "Quick Add: Food", food_lookup_path, :class => "btn btn-default", id: "add_buttons" %>
+	<%= link_to "Quick Add: Water", '#', :class => "btn btn-default", id: "add_buttons" %>
+	<%= link_to "Quick Add: Sleep", '#', :class => "btn btn-default", id: "add_buttons" %>
+	<%= link_to "Quick Add: Workout", '#', :class => "btn btn-default", id: "add_buttons" %>
+</div>

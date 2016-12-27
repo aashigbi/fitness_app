@@ -125,3 +125,42 @@ input {
     color: $state-danger-text;
   }
 }
+
+/* buttons */
+
+.btn {
+    padding: 14px 24px;
+      border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#add_buttons {
+  border: 6px solid white;
+  color: #fff;
+  background-color: green;
+}
+
+#add_food_button {
+  border: 6px solid white;
+  color: #fff;
+  background-color: green;
+  margin-left: 5%;
+}
+
+/* wells */
+
+.well {
+  height: 225px;
+  padding-top: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* tables */
+.table {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}

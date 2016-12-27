@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-  def goals
+  def edit
   	@user = User.find(params[:id])
   	@user.save
   end

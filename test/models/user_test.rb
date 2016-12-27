@@ -115,4 +115,18 @@ class UserTest < ActiveSupport::TestCase
 		end
 	end
 
+	test "macro percents should add up to 100" do
+		carb_macros = %w[40 10 90 60]
+		protein_macros = %w[30 50 30]
+		fat_macros = %w[30 40 10]
+
+		invalid_macros.each do |invalid_macro|
+			@user.carb_percent = invalid_macro
+			@user.protein_percent = invalid_macro
+			@user.fat_percent = invalid_macro
+			assert_not @user.valid?, "#{invalid_macro.inspect} should be invalid"
+		end
+	end
+
+
 end

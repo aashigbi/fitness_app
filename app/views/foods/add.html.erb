@@ -1,0 +1,40 @@
+<h1>Add Food</h1>
+
+<div class = "row">
+	<div class = "col-md-6 col-md-offset-3">
+		<%= form_for(@food) do |f| %>
+
+		<%= f.label :brand %>
+		<%= f.text_field :brand, class: 'form-control' %>
+
+		<%= f.label :item %>
+		<%= f.text_field :item, class: 'form-control' %>
+
+		<%= f.label :serving_size %>
+		<%= f.text_field :serving_size, class: 'form-control' %>
+
+		<%= f.label '# of servings' %>
+		<%= f.number_field :servings, class: 'form-control' %>
+
+		<%= f.label :calories %>
+		<%= f.number_field :calories, class: 'form-control' %>
+
+		<%= f.label 'Protein (g)' %>
+		<%= f.number_field :protein, class: 'form-control' %>
+
+		<%= f.label 'Carbs (g)' %>
+		<%= f.number_field :carbs, class: 'form-control' %>
+
+		<%= f.label 'Sugars (g)' %>
+		<%= f.number_field :sugars, class: 'form-control' %>
+
+		<%= f.label 'Fiber (g)' %>
+		<%= f.number_field :fiber, class: 'form-control' %>
+
+		<%= f.label 'Fat (g)' %>
+		<%= f.number_field :fat, class: 'form-control' %>		
+
+		<%= f.submit "Add food", class: "btn btn-primary"  %>
+		<% end %>
+	</div>
+</div>

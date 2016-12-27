@@ -1,0 +1,43 @@
+<h1>Food Lookup</h1>
+
+<div class = "table-hover">
+	<table class = "table">
+	  <thead>
+	    <tr>
+	      <th>Brand</th>
+	      <th>Item</th>
+	      <th>Serving Size</th>
+	      <th>Calories</th>
+	      <th>Protein</th>
+	      <th>Carbs</th>
+	      <th>Sugars</th>
+	      <th>Fiber</th>
+	      <th>Fat</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @foods.each do |food| %>
+	      <tr>
+	        <td><%= food.brand %></td>
+	        <td><%= food.item %></td>
+	        <td><%= food.serving_size %></td>
+	        <td><%= food.calories %></td>
+	        <td><%= food.protein %></td>
+	        <td><%= food.carbs %></td>
+	        <td><%= food.sugars %></td>
+	        <td><%= food.fiber %></td>
+	        <td><%= food.fat %></td>
+	        <td><%= link_to 'Add', add_food_path(food.id) %></td>
+	        <td><%= link_to 'Edit', edit_food_path(food.id) %></td>
+	        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+</div>
+
+<br>
+
+<%= link_to 'Add New Food', new_food_path, :class => "btn btn-default", id: "add_food_button" %>
